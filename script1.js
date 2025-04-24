@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function sendMail() {
     const params = {
       from_name: document.getElementById("name").value,
@@ -22,7 +22,6 @@ function sendMail() {
     e.preventDefault();
     sendMail();
   });
-=======
 function sendMail() {
     const params = {
       from_name: document.getElementById("name").value,
@@ -46,5 +45,3 @@ function sendMail() {
     e.preventDefault();
     sendMail();
   });
->>>>>>> aabcc364fd18c3985bb63f96b2c78ccb33d0f85b
-  
