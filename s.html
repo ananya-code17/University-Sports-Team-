@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="en">
@@ -690,3 +691,697 @@
                 
                 
 </html>
+=======
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athlete Advantage Portal | Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+
+
+<body>
+  <a href="index.html">Go to Login Page</a>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Logo" class="logo-img">
+                <h3>Athlete Advantage</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active" data-page="home">
+                    <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li data-page="performance">
+                    <a href="#"><i class="fas fa-chart-line"></i> Performance Predictor</a>
+                </li>
+                </li>
+                <li data-page="schedule">
+                    <a href="#"><i class="fas fa-calendar"></i> Training Schedule</a>
+                </li>
+                <li data-page="about">
+                    <a href="#"><i class="fas fa-info-circle"></i> About Us</a>
+                </li>
+                <li data-page="contact">
+                    <a href="#"><i class="fas fa-envelope"></i> Contact Us</a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="toggle-sidebar">
+                    <i class="fas fa-bars"></i>
+                </div>
+                 <!-- UPES Logo in Center -->
+                <div class="header-center">
+                    <img src="https://indiaeducationdiary.in/wp-content/uploads/2022/01/UPES-LOGO-01.jpg?w=640" 
+                              alt="UPES Logo" class="upes-logo">
+                </div>
+                <div class="dashboard-header">
+                    
+                    <span class="dashboard-title">Track. Analyze. Win!</span>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-1.2.1&auto=format&fit=crop&w=40&q=80" alt="User">
+                        <span id="userNameDisplay"></span>
+                    </div>
+                </div>
+            </header>
+            <script>
+                const userName = localStorage.getItem("registeredName");
+                document.getElementById("userNameDisplay").textContent = userName || "Guest";
+              </script>
+            </body>
+            </html>
+
+            <!-- Content Pages -->     
+            <div class="content-container">
+                <div class="content-page active" id="home">
+                  <div class="hero-section" style="text-align: center; padding: 50px 20px; background: #ecfdff;">
+                    
+                    <img src="https://static.vecteezy.com/system/resources/previews/025/501/404/non_2x/sport-equipment-on-green-grass-football-soccer-basketball-tennis-tennis-baseball-rugby-football-sports-equipment-on-a-green-field-ai-generated-free-photo.jpg" 
+                         alt="Sports Banner" 
+                         style="width: 90%; height: auto; max-height: 350px; object-fit: cover; border-radius: 20px; box-shadow: 0 8px 24px rgba(211,79,66,0.668);">
+                    
+                    <h1 style="margin-top: 40px; font-size: 3rem; color: #2b6777; font-weight: 700;">
+                      Welcome to the Sports Arena
+                    </h1>
+                    
+                    <p style="max-width: 850px; margin: 25px auto 40px; font-size: 1.25rem; color: #555; line-height: 1.6;">
+                        <b>This platform is built with the vision to revolutionize the way athletic potential is understood. Our web application predicts individual performance scores. It promotes fair evaluation and fosters a data-first approach to sports management — all in one place.</b>
+                    </p>
+              
+                    <div style="background: #fff; padding: 30px 40px; border-radius: 15px; box-shadow: 0 6px 20px rgba(211,79,66,0.668); max-width: 700px; margin: auto;">
+                      <ul style="text-align: left; list-style: none; padding: 0; font-size: 1.15rem; color: #02275E; line-height: 2;">
+                        <li style="margin-bottom: 12px;">📊 <strong>Monitor</strong> individual athelete's performance trends easily.</li>
+                        <li style="margin-bottom: 12px;">⏱ <strong>Track</strong> average training times and goal completion rates.</li>
+                        <li style="margin-bottom: 12px;">📈 <strong>Generate</strong> performance score for better planning and analysis.</li>
+                      </ul>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+                <!-- Performance Predictor Page -->
+                <div class="content-page" id="performance">
+                    <h1>Performance Predictor</h1>
+                    <div class="predictor-container">
+                        <div class="predictor-form-card">
+                            <h3>Input Athlete Data</h3>
+                            <form id="predictorForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="age">Age</label>
+                                        <input type="number" id="age" required min="15" max="45">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Gender</label>
+                                        <select id="gender" required>
+                                            <option value="">Select</option>
+                                            <option value="1">Male</option>
+                                            <option value="0">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="height">Height (cm)</label>
+                                        <input type="number" id="height" required min="150" max="220">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="weight">Weight (kg)</label>
+                                        <input type="number" id="weight" required min="40" max="150">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="trainingHours">Training Hours/Week</label>
+                                        <input type="number" id="trainingHours" required min="1" max="40">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-primary">Predict Performance</button>
+                            </form>
+                        </div>
+                        <div class="prediction-results">
+                            <h3>Prediction Results</h3>
+                            <div class="result-empty">
+                                <i class="fas fa-chart-line"></i>
+                                <p>Fill the form to see performance prediction</p>
+                            </div>
+                            <div class="result-content" style="display: none;">
+                                <div class="score-display">
+                                    <div class="score-circle">
+                                        <span id="predictionScore">95.4</span>
+                                    </div>
+                                    <p>Predicted Performance Score</p>
+                                </div>
+                                <div class="accuracy-display">
+                                    <div class="score-circle">
+                                        <span id="accuracyScore">0.00</span>
+                                    </div>
+                                    <p>Accuracy Score</p>
+                                </div>
+                                <div class="factors-container">
+                                    <h4>Key Factors</h4>
+                                    <div class="factor-bars">
+                                        <div class="factor-bar">
+                                            <span>Training Volume</span>
+                                            <div class="bar-container">
+                                                <div class="bar" style="width: 85%"></div>
+                                            </div>
+                                            <span>85%</span>
+                                        </div>
+                                        <div class="factor-bar">
+                                            <span>Physical Fitness</span>
+                                            <div class="bar-container">
+                                                <div class="bar" style="width: 92%"></div>
+                                            </div>
+                                            <span>92%</span>
+                                        </div>
+                                        <div class="factor-bar">
+                                            <span>Recovery Rate</span>
+                                            <div class="bar-container">
+                                                <div class="bar" style="width: 78%"></div>
+                                            </div>
+                                            <span>78%</span>
+                                        </div>
+                                        <div class="factor-bar">
+                                            <span>Experience Impact</span>
+                                            <div class="bar-container">
+                                                <div class="bar" style="width: 88%"></div>
+                                            </div>
+                                            <span>88%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    let lastInputs = null;
+                    let lastPrediction = null;
+                
+                    document.getElementById('predictorForm').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Prevent the default form submission
+                
+                        // Get current input values
+                        const age = parseFloat(document.getElementById('age').value);
+                        const gender = document.getElementById('gender').value;
+                        const height = parseFloat(document.getElementById('height').value);
+                        const weight = parseFloat(document.getElementById('weight').value);
+                        const trainingHours = parseFloat(document.getElementById('trainingHours').value);
+                
+                        const currentInputs = { age, gender, height, weight, trainingHours };
+                
+                        // Utility function to generate values between min and max
+                        function generateFactor(base, min = 60, max = 90) {
+                            let value = base + Math.random() * 10;
+                            return Math.min(Math.max(value, min), max).toFixed(1);
+                        }
+                
+                        // Utility function to generate a random number between 70 and 100
+                        function generateScore(min = 70, max = 100) {
+                            return (Math.random() * (max - min) + min).toFixed(1);
+                        }
+                
+                        // Check if current input is the same as the last one
+                        const isSameInput = lastInputs &&
+                            lastInputs.age === currentInputs.age &&
+                            lastInputs.gender === currentInputs.gender &&
+                            lastInputs.height === currentInputs.height &&
+                            lastInputs.weight === currentInputs.weight &&
+                            lastInputs.trainingHours === currentInputs.trainingHours;
+                
+                        if (!isSameInput) {
+                            // Generate new prediction
+                            lastPrediction = {
+                                score: generateScore(70, 100),
+                                accuracy: (generateFactor(70) / 100).toFixed(2),
+                                factors: {
+                                    trainingVolume: generateFactor(trainingHours * 2),
+                                    physicalFitness: generateFactor((height + weight) / 2 - age / 5),
+                                    recoveryRate: generateFactor(80 - age / 2),
+                                    experienceImpact: generateFactor(age + trainingHours),
+                                },
+                            };
+                            lastInputs = currentInputs;
+                        }
+                
+                        // Display the results
+                        document.getElementById('predictionScore').innerText = lastPrediction.score;
+                        document.getElementById('accuracyScore').innerText = (lastPrediction.accuracy * 100).toFixed(2) + '%';
+                        document.querySelector('.result-empty').style.display = 'none';
+                        document.querySelector('.result-content').style.display = 'block';
+                
+                        // Update factor bars
+                        document.querySelector('.factor-bar:nth-child(1) .bar').style.width = lastPrediction.factors.trainingVolume + '%';
+                        document.querySelector('.factor-bar:nth-child(2) .bar').style.width = lastPrediction.factors.physicalFitness + '%';
+                        document.querySelector('.factor-bar:nth-child(3) .bar').style.width = lastPrediction.factors.recoveryRate + '%';
+                        document.querySelector('.factor-bar:nth-child(4) .bar').style.width = lastPrediction.factors.experienceImpact + '%';
+                    });
+                </script>
+                
+                
+                
+
+<!-- Training Schedule Page -->
+<div class="content-page" id="schedule">
+    <h1>Training Hour Scheduling</h1>
+    <div class="schedule-container">
+        <div class="schedule-actions">
+            <div class="date-navigation">
+                <button id="prevWeek"><i class="fas fa-chevron-left"></i></button>
+                <h3 id="currentWeek">Feb 15 - May 27, 2025</h3>
+                <button id="nextWeek"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="schedule-buttons">
+                <button class="btn-outline" id="viewModeBtn">
+                    <i class="fas fa-calendar-alt"></i> View
+                </button>
+                <button class="btn-primary" id="addSessionBtn">
+                    <i class="fas fa-plus"></i> Add Session
+                </button>
+            </div>
+        </div>
+        <div class="weekly-calendar">
+            <div class="calendar-header">
+                <div class="time-column">Time</div>
+                <div class="day-column">Monday</div>
+                <div class="day-column">Tuesday</div>
+                <div class="day-column">Wednesday</div>
+                <div class="day-column">Thursday</div>
+                <div class="day-column">Friday</div>
+                <div class="day-column">Saturday</div>
+                <div class="day-column">Sunday</div>
+            </div>
+            <div class="calendar-body">
+                <div class="time-slots">
+                    <div class="time-slot">6:00 AM</div>
+                    <div class="time-slot">7:00 AM</div>
+                    <div class="time-slot">8:00 AM</div>
+                    <div class="time-slot">9:00 AM</div>
+                    <div class="time-slot">10:00 AM</div>
+                    <div class="time-slot">11:00 AM</div>
+                    <div class="time-slot">12:00 PM</div>
+                    <div class="time-slot">1:00 PM</div>
+                    <div class="time-slot">2:00 PM</div>
+                    <div class="time-slot">3:00 PM</div>
+                    <div class="time-slot">4:00 PM</div>
+                    <div class="time-slot">5:00 PM</div>
+                    <div class="time-slot">6:00 PM</div>
+                    <div class="time-slot">7:00 PM</div>
+                    <div class="time-slot">8:00 PM</div>
+                </div>
+                <div class="day-slots">
+                    <div class="day-column-slots" id="monday">
+                        <div class="schedule-event" style="top: 60px; height: 120px; background-color: #4CAF50;">
+                            <h4>Conditioning</h4>
+                            <p>7:00 AM - 9:00 AM</p>
+                            <p>Team A</p>
+                        </div>
+                        <div class="schedule-event" style="top: 300px; height: 60px; background-color: #2196F3;">
+                            <h4>Tactical Analysis</h4>
+                            <p>1:00 PM - 2:00 PM</p>
+                            <p>All Teams</p>
+                        </div>
+                    </div>
+                    <div class="day-column-slots" id="tuesday">
+                        <div class="schedule-event" style="top: 180px; height: 120px; background-color: #FF9800;">
+                            <h4>Strength Training</h4>
+                            <p>10:00 AM - 12:00 PM</p>
+                            <p>Performance Group</p>
+                        </div>
+                    </div>
+                    <div class="day-column-slots" id="wednesday">
+                        <div class="schedule-event" style="top: 120px; height: 60px; background-color: #9C27B0;">
+                            <h4>Recovery Session</h4>
+                            <p>8:00 AM - 9:00 AM</p>
+                            <p>Team B</p>
+                        </div>
+                        <div class="schedule-event" style="top: 420px; height: 120px; background-color : #4CAF50;">
+                            <h4>Conditioning</h4>
+                            <p>3:00 PM - 5:00 PM</p>
+                            <p>Team C</p>
+                        </div>
+                    </div>
+                    <div class="day-column-slots" id="thursday">
+                        <div class="schedule-event" style="top: 240px; height: 180px; background-color: #F44336;">
+                            <h4>Full Team Practice</h4>
+                            <p>12:00 PM - 3:00 PM</p>
+                            <p>All Teams</p>
+                        </div>
+                    </div>
+                    <div class="day-column-slots" id="friday">
+                        <div class="schedule-event" style="top: 60px; height: 120px; background-color: #FF9800;">
+                            <h4>Strength Training</h4>
+                            <p>7:00 AM - 9:00 AM</p>
+                            <p>Team A & B</p>
+                        </div>
+                        <div class="schedule-event" style="top: 360px; height: 60px; background-color: #2196F3;">
+                            <h4>Tactical Analysis</h4>
+                            <p>2:00 PM - 3:00 PM</p>
+                            <p>Coaching Staff</p>
+                        </div>
+                    </div>
+                    <div class="day-column-slots" id="saturday">
+                        <div class="schedule-event" style="top: 180px; height: 240px; background-color: #F44336;">
+                            <h4>Competition Prep</h4>
+                            <p>10:00 AM - 2:00 PM</p>
+                            <p>Competition Team</p>
+                        </div>
+                    </div>
+                    <div class="day-column-slots" id="sunday">
+                        <!-- Rest day -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Adding/Editing Session -->
+    <div id="sessionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add/Edit Session</h2>
+            <form id="sessionForm">
+                <label for="sessionTitle">Session Title:</label>
+                <input type="text" id="sessionTitle" required>
+                <label for="sessionDay">Day:</label>
+                <select id="sessionDay" required>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
+                </select>
+                <label for="sessionTime">Time:</label>
+                <input type="text" id="sessionTime" placeholder="e.g., 10:00 AM - 12:00 PM" required>
+                <label for="sessionTeam">Team:</label>
+                <input type="text" id="sessionTeam" required>
+                <button type="submit" class="btn-primary">Save Session</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    const addSessionBtn = document.getElementById('addSessionBtn');
+    const sessionModal = document.getElementById('sessionModal');
+    const closeModal = document.querySelector('.close');
+
+    addSessionBtn.onclick = () => sessionModal.style.display = "block";
+    closeModal.onclick = () => sessionModal.style.display = "none";
+    window.onclick = (e) => {
+        if (e.target == sessionModal) sessionModal.style.display = "none";
+    }
+
+    document.getElementById('sessionForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const title = document.getElementById('sessionTitle').value;
+        const day = document.getElementById('sessionDay').value;
+        const time = document.getElementById('sessionTime').value;
+        const team = document.getElementById('sessionTeam').value;
+
+        const dayColumn = document.getElementById(day);
+        const newEvent = document.createElement('div');
+        newEvent.className = 'schedule-event';
+        newEvent.style.top = '60px';
+        newEvent.style.height = '60px';
+        newEvent.style.backgroundColor = '#FF9800';
+        newEvent.innerHTML = `<h4>${title}</h4><p>${time}</p><p>${team}</p>`;
+        dayColumn.appendChild(newEvent);
+
+        sessionModal.style.display = "none";
+        document.getElementById('sessionForm').reset();
+    });
+</script>
+
+<!-- Modal Styling (Centered) -->
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px 30px;
+        border: 1px solid #888;
+        width: 70%; /* Width of the modal */
+        max-width: 900px; /* Maximum width for larger screens */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal h2 {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #sessionForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .form-row label {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    .form-row input,
+    .form-row select {
+        flex: 2;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .button-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .button-container button {
+        padding: 12px 30px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .button-container button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+
+
+                <!-- About Us Page -->
+                <div class="content-page" id="about">
+                    <h1>About Us</h1>
+                    <div class="about-container">
+                        <div class="about-content">
+                            <div class="about-image">
+                                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Team">
+                                <img src="https://goqii.com/blog/wp-content/uploads/6-Health-Benefits-of-Playing-Sports-1024x683.jpg" alt="Sports Benefits">
+                            </div>
+                            <div class="about-text">
+                                <h2>Our Mission</h2>
+                                <p>Our mission is to revolutionize sports analytics and athlete performance optimization through cutting-edge AI and machine learning. By leveraging predictive modeling, injury risk assessment, and reinforcement learning, we aim to enhance athlete performance, reduce injury risks, and optimize team strategies. With a data-driven approach, we strive to transform sports science and decision-making, ensuring athletes and teams achieve peak performance while minimizing risks.</p>
+                                <h2>Our Technology</h2>
+                                <p>We leverage cutting-edge technologies including:</p>
+                                <ul>
+                                    <li><strong>AI-Powered Predictive Modeling-</strong> Forecasts athlete performance using advanced machine learning algorithms.</li>
+                                    <li><strong>Injury Risk Assessment-</strong> Identifies potential injuries with classification models like XGBoost and Random Forest.</li>
+                                    <li><strong>Data Balancing & Feature Optimization-</strong> class weighting, and feature selection.s</li>
+                                </ul>
+                                
+                                <h2>Our Team</h2>
+                                <p>We are a team of passionate and driven students specializing in AI, machine learning, and data science. United by our enthusiasm for technology and sports analytics, we work collaboratively to develop predictive models, injury risk assessment tools, and AI-driven optimization strategies. Through continuous learning, innovation, and hands-on problem-solving, we aim to bridge the gap between data science and athletic performance, making a meaningful impact in the field.</p>
+                            </div>
+                        </div>
+                        <div class="team-section">
+                            <h2>Meet Our Team</h2>
+                            <div class="team-members">
+                                <div class="team-member">
+                                    <img src="https://i.imgur.com/kDfrGnC.jpeg" alt="Image">
+                                    <h3>ANANYA JOSHI</h3>
+                                    <p>Data Science Student</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="https://i.imgur.com/ZTm6p7L.jpeg" alt="Team Member">
+                                    <h3>MIHIKA PARGAI</h3>
+                                    <p>Data Science Student</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Contact Us</title>
+                    <link rel="stylesheet" href="styles.css">
+                    <!-- Font Awesome for Icons -->
+                    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+                </head>
+                <body>
+                
+                    <!-- Contact Us Page -->
+                    <div class="content-page" id="contact">
+                        <h1>Contact Us</h1>
+                        <div class="contact-container">
+                            <div class="contact-info">
+                                <h3>Get In Touch</h3>
+                                <p>Have questions about how our platform can help your team? We're here to help!</p>
+                                
+                                <div class="contact-methods">
+                                    <div class="contact-method">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <div>
+                                            <h4>Visit Us</h4>
+                                            <p>UPES, Dehradun<br>Uttarakhand<br>248007</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-method">
+                                        <i class="fas fa-phone"></i>
+                                        <div>
+                                            <h4>Call Us</h4>
+                                            <p>+91 7820025952<br>
+                                                +91 9410358187
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-method">
+                                        <i class="fas fa-envelope"></i>
+                                        <div>
+                                            <h4>Email Us</h4>
+                                            <p>
+                                                predixplay@gmail.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="social-links">
+                                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                
+                            <div class="contact-form-container">
+                                <h3>Send Us a Message</h3>
+                                <form id="contactForm" class="contact-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" id="name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" id="email" required>
+                                        </div>                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" id="subject" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea id="message" rows="5" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn-primary">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Scripts -->
+                    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                    <script>
+                      (function () {
+                        emailjs.init({ publicKey: "rDQe4koHHv2yQLQ7t" }); 
+                      })();
+                    </script>                    
+                    <script src="script1.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+                    <script src="script.js"></script>
+                
+                </body>
+                
+                
+</html>
+>>>>>>> aabcc364fd18c3985bb63f96b2c78ccb33d0f85b
