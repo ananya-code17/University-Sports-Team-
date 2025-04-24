@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athlete Advantage Portal | Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-form-container">
+            <div class="logo">
+                <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Logo" class="logo-img">
+                <h1>Athlete Advantage</h1>
+            </div>
+            <form id="loginForm" class="login-form">
+                <h2>Sign In</h2>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="remember-forgot">
+                    <div>
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+        </div>
+        <div class="login-image"></div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // prevent form from submitting
+
+            const inputEmail = document.getElementById("email").value.trim();
+            const inputPassword = document.getElementById("password").value.trim();
+
+            const storedEmail = localStorage.getItem("registeredEmail");
+            const storedPassword = localStorage.getItem("registeredPassword");
+            const storedName = localStorage.getItem("registeredName");
+
+            if (inputEmail === storedEmail && inputPassword === storedPassword) {
+                // Save name in sessionStorage for dashboard use
+                sessionStorage.setItem("currentUserName", storedName);
+
+                // Redirect to dashboard page
+                window.location.href = "s.html"; // Change to your dashboard file name
+            } else {
+                alert("Invalid email or password.");
+            }
+        });
+    </script>
+</body>
+</html>
